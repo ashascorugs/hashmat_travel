@@ -269,6 +269,61 @@ About Hashmat
 </section>
 
 </main>
+
+<section class="hero1">
+
+  <div class="title">
+    <h2>
+      <span>Why</span>
+      <span>Travelers</span>
+      <span>Choose</span>
+      <strong>Hashmat</strong>
+      <strong>Travels</strong>
+      <strong>and Tours</strong>
+    </h2>
+  </div>
+  
+  <div class="stats glass">
+    <div><b class="counter" data-target="60">0</b><p>From budget adventures to<br>private luxury escapes</p></div>
+    <div><b class="counter" data-target="15">0</b><p>Perfecting meaningful travel<br>experiences since 2009</p></div>
+    <div><b class="counter" data-target="98">0</b><p>Most travelers come back to<br>plan their next trip</p></div>
+    <div><b class="counter" data-target="12">0</b><p>Journeys crafted for travelers<br>who return</p></div>
+  </div>
+  
+  <div class="cards">
+  
+  <div class="card">
+  <h3>Best Prices</h3>
+  <p>Amazing travel experiences with great value across tours, Umrah and Hajj packages.</p>
+  </div>
+  
+  <div class="card">
+  <h3>Wide Selection of Tours</h3>
+  <p>Domestic and international tours across many destinations, with flexible travel options.</p>
+  </div>
+  
+  <div class="card">
+  <h3>Best Flight Deals</h3>
+  <p>Competitive fares and trusted airline options for several destinations.</p>
+  </div>
+  
+  <div class="card">
+  <h3>Professional Tour Guide</h3>
+  <p>Helpful expert guidance for smooth travel planning and curated itineraries.</p>
+  </div>
+  
+  <div class="card">
+  <h3>Hotels & Resorts</h3>
+  <p>Comfortable stays and quality accommodation chosen to match your journey.</p>
+  </div>
+  
+  <div class="card">
+  <h3>Visa Assist</h3>
+  <p>Travel visa support and consultation for multiple destinations worldwide.</p>
+  </div>
+  
+  </div>
+</section>
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="w">
@@ -298,11 +353,7 @@ About Hashmat
         <a href="tel:+923237189361">+92 323 718 9361</a>
         <a href="https://wa.me/923009224346" target="_blank" rel="noopener">WhatsApp</a>
         <p style="margin-top:8px">Edward House CL-5/15, Sir Abdullah Haroon Road, Civil Lines, Karachi, Pakistan</p>
-        <form class="newsletter-form" id="newsletter-form" action="php/newsletter.php" method="post" novalidate>
-          <input type="email" name="email" required placeholder="Email for travel updates" aria-label="Email">
-          <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button class="btn gold" type="submit" style="padding:12px 18px">Join</button>
-        </form>
+        
         <div class="field-error" id="newsletter-message" style="color:var(--gold)"></div>
       </div>
     </div>
@@ -314,3 +365,25 @@ About Hashmat
 <script src="assets/js/booking.js"></script>
 </body>
 </html>
+
+<script>
+  const counters=document.querySelectorAll(".counter");
+  
+  counters.forEach(counter=>{
+  let target=Number(counter.dataset.target);
+  let count=0;
+  let speed=target/100;
+  
+  function update(){
+   count+=speed;
+   if(count<target){
+     counter.innerHTML=Math.floor(count)+"+";
+     requestAnimationFrame(update);
+   }else{
+     counter.innerHTML=target+(target===98?"%":"+");
+   }
+  }
+  update();
+  });
+  </script>
+  

@@ -71,27 +71,93 @@
 </section>
 
 <!-- ============ OUR STORY ============ -->
-<section>
-  <div class="w grid grid-2" style="gap:60px;align-items:center">
-    <div class="overlap reveal">
-      <div class="photo-frame" style="min-height:440px"><img src="assets/images/home/home-hero.svg" alt="Hashmat Travel & Tours team at work" loading="lazy"></div>
-      <div class="secondary"><div class="photo-frame"><img src="assets/images/home/home-hero.svg" alt="Travellers preparing for their trip" loading="lazy"></div></div>
+<!-- ============ about 2 ============ -->
+
+<section class="about-section">
+<div class="about-container">
+
+<!-- LEFT IMAGE AREA -->
+
+<div class="image-wrapper reveal">
+    <div class="main-image image-hover">
+        <img src="https://drive.google.com/thumbnail?id=1Mb29MbwUFegX1hGZOVQl8VDwBnL-81jS&sz=w1200"> alt="Pilgrims">
     </div>
-    <div>
-      <h2 class="split-text">Our Story</h2>
-      <p class="lead"><span class="placeholder-value" contenteditable="false">Add your details</span> Add the founding story, years of service and milestones once verified.</p>
+    <div class="small-image image-hover">
+          <img src="https://drive.google.com/thumbnail?id=16jATvTsCH9K6TRYN85QV_cv2y9bcBjLr&sz=w1200"> alt="Pilgrims">
     </div>
-  </div>
+</div>
+
+<!-- RIGHT CONTENT -->
+
+
+<div class="about-content reveal">
+      <h2 class="split-text">About Us</h2>
+<p>
+Hashmat Travel & Tours arranges flights,
+hotels, transfers and visas in one complete plan.
+We provide trusted travel assistance for Hajj,
+Umrah and worldwide journeys.
+</p>
+<a class="btn gold" href="contact.html">Contact Us</a>
+</div>
+</div>
 </section>
 
-<!-- ============ MISSION / VALUES / SERVICE ============ -->
-<section class="soft">
-  <div class="w grid grid-3">
-    <div class="card reveal" style="padding:32px"><h3>Mission</h3><p class="lead">Make every journey organised, comfortable and calm.</p></div>
-    <div class="card reveal" style="padding:32px;--delay:.1s"><h3>Values</h3><p class="lead">Honesty, respect for the sacred and clear communication.</p></div>
-    <div class="card reveal" style="padding:32px;--delay:.2s"><h3>How We Serve Pilgrims</h3><p class="lead">Coordinated flights, stays, transfers and visa guidance.</p></div>
-  </div>
-</section>
+
+<section class="hero1">
+
+    <div class="title">
+      <h2>
+        <span>Why</span>
+        <span>Travelers</span>
+        <span>Choose</span>
+        <strong>Hashmat</strong>
+        <strong>Travels</strong>
+        <strong>and Tours</strong>
+      </h2>
+    </div>
+    
+    <div class="stats glass">
+      <div><b class="counter" data-target="60">0</b><p>From budget adventures to<br>private luxury escapes</p></div>
+      <div><b class="counter" data-target="15">0</b><p>Perfecting meaningful travel<br>experiences since 2009</p></div>
+      <div><b class="counter" data-target="98">0</b><p>Most travelers come back to<br>plan their next trip</p></div>
+      <div><b class="counter" data-target="12">0</b><p>Journeys crafted for travelers<br>who return</p></div>
+    </div>
+    
+    <div class="cards">
+    
+    <div class="card">
+    <h3>Best Prices</h3>
+    <p>Amazing travel experiences with great value across tours, Umrah and Hajj packages.</p>
+    </div>
+    
+    <div class="card">
+    <h3>Wide Selection of Tours</h3>
+    <p>Domestic and international tours across many destinations, with flexible travel options.</p>
+    </div>
+    
+    <div class="card">
+    <h3>Best Flight Deals</h3>
+    <p>Competitive fares and trusted airline options for several destinations.</p>
+    </div>
+    
+    <div class="card">
+    <h3>Professional Tour Guide</h3>
+    <p>Helpful expert guidance for smooth travel planning and curated itineraries.</p>
+    </div>
+    
+    <div class="card">
+    <h3>Hotels & Resorts</h3>
+    <p>Comfortable stays and quality accommodation chosen to match your journey.</p>
+    </div>
+    
+    <div class="card">
+    <h3>Visa Assist</h3>
+    <p>Travel visa support and consultation for multiple destinations worldwide.</p>
+    </div>
+    
+    </div>
+    </section>
 
 <!-- ============ WHY CHOOSE HASHMAT ============ -->
 <section class="dark">
@@ -159,3 +225,24 @@
 <script src="assets/js/animations.js"></script>
 </body>
 </html>
+
+<script>
+    const counters=document.querySelectorAll(".counter");
+    
+    counters.forEach(counter=>{
+    let target=Number(counter.dataset.target);
+    let count=0;
+    let speed=target/100;
+    
+    function update(){
+     count+=speed;
+     if(count<target){
+       counter.innerHTML=Math.floor(count)+"+";
+       requestAnimationFrame(update);
+     }else{
+       counter.innerHTML=target+(target===98?"%":"+");
+     }
+    }
+    update();
+    });
+    </script>
