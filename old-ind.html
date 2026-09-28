@@ -53,14 +53,14 @@
 <main>
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="bg" data-parallax> <img src="https://drive.google.com/thumbnail?id=12hoxCYbXtL2qh4OS1aYrZx9Y0wEGOaEV&sz=w1200">alt="Pilgrims and travellers at a premium destination" loading="eager"></div>
-  <!--<svg class="plane" viewBox="0 0 560 240" fill="none" aria-hidden="true">
+  <div class="bg" data-parallax><img src="assets/images/home/home-hero.svg" alt="Pilgrims and travellers at a premium destination" loading="eager"></div>
+  <svg class="plane" viewBox="0 0 560 240" fill="none" aria-hidden="true">
     <path class="dash" d="M10 220C150 200 260 120 430 60" stroke="#FDC453" stroke-width="2"/>
     <g transform="translate(430 60) rotate(-24)">
       <path d="M0 0 42 12 0 24 8 12z" fill="#fff"/>
       <path d="M14 12 -6 -10M14 12-6 34" stroke="#fff" stroke-width="5"/>
     </g>
-  </svg>-->
+  </svg>
   <div class="w">
     <p style="text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;color:var(--gold);font-weight:700" class="reveal in">Hashmat Travel & Tours</p>
     <h1 class="split-text">Your Journey of Faith, Comfort &amp; Peace of Mind</h1>
@@ -70,9 +70,90 @@
   <div class="scroll-indicator"></div>
 </section>
 
+<!-- ============ TRAVEL PLANNER (overlaps hero) ============ -->
+<div class="w" id="plan">
+<!-- ============ TRAVEL PLANNER ============ -->
+<div class="planner overlap-up reveal">
+  <h2 style="font-size:clamp(1.7rem,3vw,2.4rem)">Design Your Journey</h2>
+<!--   <p class="lead" style="margin-top:8px">Tell us what you have in mind. A travel expert will reply with a plan built around it.</p>
+  <form class="planner-form" action="php/submit-travel-plan.php" method="post" novalidate>
+    <div class="field-grid">
+      <div class="field"><label for="full_name">Full Name</label><input id="full_name" name="full_name" required autocomplete="name"></div>
+      <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
+      <div class="field"><label for="email">Email Address</label><input id="email" name="email" type="email" autocomplete="email"></div>
+      <div class="field">
+        <label for="travel_type">Travel Type</label>
+        <select id="travel_type" name="travel_type">
+          <option>Umrah</option><option>Hajj</option><option>International tour</option>
+          <option>Domestic tour</option><option>Visa only</option><option>Flights &amp; hotels</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="destination">Destination</label>
+        <select id="destination" name="destination">
+          <option>Makkah &amp; Madinah</option><option>Baku, Azerbaijan</option><option>Istanbul, Turkey</option>
+          <option>Dubai, UAE</option><option>Malaysia</option><option>Maldives</option><option>Saudi Arabia</option>
+          <option>Hunza / Skardu</option><option>Swat / Naran / Murree</option><option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label for="departure_city">Departure City</label><input id="departure_city" name="departure_city" value="Karachi"></div>
+      <div class="field"><label for="return_city">Return City</label><input id="return_city" name="return_city" value="Karachi"></div>
+      <div class="field">
+        <label for="hotel_category">Hotel Category</label>
+        <select id="hotel_category" name="hotel_category">
+          <option>Economy</option><option>3 star</option><option>4 star</option><option>5 star</option>
+          <option>Close to the Haram / preferred area</option>
+        </select>
+      </div>
+      <div class="field"><label for="arrival_date">Arrival Date</label><input id="arrival_date" name="arrival_date" type="date"></div>
+      <div class="field"><label for="departure_date">Departure Date</label><input id="departure_date" name="departure_date" type="date"></div>
+      <div class="field"><label for="nights">Number of Nights</label><input id="nights" name="nights" readonly placeholder="Calculated automatically"></div>
+      <div class="field">
+        <label for="room_requirement">Room Requirement</label>
+        <select id="room_requirement" name="room_requirement">
+          <option>Double</option><option>Triple</option><option>Quad</option><option>Family suite</option><option>Single</option>
+        </select>
+      </div>
+      <div class="field" data-field="adults">
+        <label>Adults</label>
+        <div class="counter">
+          <button type="button" data-count-btn="-1" aria-label="Fewer adults">&minus;</button>
+          <b data-count-value>2</b>
+          <button type="button" data-count-btn="1" aria-label="More adults">+</button>
+        </div>
+        <input type="hidden" name="adults" value="2">
+      </div>
+      <div class="field" data-field="children">
+        <label>Children</label>
+        <div class="counter">
+          <button type="button" data-count-btn="-1" aria-label="Fewer children">&minus;</button>
+          <b data-count-value>0</b>
+          <button type="button" data-count-btn="1" aria-label="More children">+</button>
+        </div>
+        <input type="hidden" name="children" value="0">
+      </div>
+      <div class="field w2">
+        <label for="visa_requirement">Visa Requirement</label>
+        <select id="visa_requirement" name="visa_requirement">
+          <option>I need visa assistance</option><option>I already have a visa</option><option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field w4">
+        <label for="additional_requirements">Additional Requirements</label>
+        <textarea id="additional_requirements" name="additional_requirements" rows="2"></textarea>
+      </div>
+    </div>
+    <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn blue" type="submit">Get My Travel Plan</button>
+      <a class="btn gold" href="https://wa.me/923009224346" target="_blank" rel="noopener">Talk to a Travel Expert</a>
+    </div>
+    <div class="field-error form-level" role="alert"></div>
+    <div class="form-success"></div>
+  </form> -->
 
 <!-- ============ TRUST STRIP ============ -->
-<!--<section style="padding-top:60px">
+<section style="padding-top:60px">
   <div class="w">
     <div class="trust-strip">
       <div class="reveal">Hajj &amp; Umrah Support</div>
@@ -82,14 +163,14 @@
     </div>
   </div>
 </section>
-</div>-->
+</div>
 
 </div>
 
 
 
 <!-- ============ ABOUT (homepage preview) ============ -->
-<!--<section>
+<section>
   <div class="w grid grid-2" style="align-items:center;gap:60px">
     <div class="overlap reveal">
       <div class="photo-frame" style="min-height:460px"><img src="assets/images/home/home-office.svg" alt="Pilgrims arriving at the Haram" loading="lazy"></div>
@@ -101,43 +182,7 @@
       <a class="btn blue" href="about.html" style="margin-top:26px">About Hashmat</a>
     </div>
   </div>
-</section>-->
-
-
-<!-- ============ about 2 ============ -->
-
-<section class="about-section">
-<div class="about-container">
-
-<!-- LEFT IMAGE AREA -->
-
-<div class="image-wrapper reveal">
-    <div class="main-image image-hover">
-        <img src="https://drive.google.com/thumbnail?id=1Mb29MbwUFegX1hGZOVQl8VDwBnL-81jS&sz=w1200"> alt="Pilgrims">
-    </div>
-    <div class="small-image image-hover">
-          <img src="https://drive.google.com/thumbnail?id=16jATvTsCH9K6TRYN85QV_cv2y9bcBjLr&sz=w1200"> alt="Pilgrims">
-    </div>
-</div>
-
-<!-- RIGHT CONTENT -->
-
-
-<div class="about-content reveal">
-      <h2 class="split-text">About Us</h2>
-<p>
-Hashmat Travel & Tours arranges flights,
-hotels, transfers and visas in one complete plan.
-We provide trusted travel assistance for Hajj,
-Umrah and worldwide journeys.
-</p>
-<a href="#" class="about-btn">
-About Hashmat
-</a>
-</div>
-</div>
 </section>
-
 
 <!-- ============ PACKAGES (featured) ============ -->
 <section class="soft">
@@ -148,7 +193,7 @@ About Hashmat
     </div>
     <div class="grid grid-3">
       <article class="card reveal">
-        <div class="photo-frame"><img src="https://drive.google.com/thumbnail?id=1z1kVhz3v2F4Exf3OeMpoI6L-31dNhx4B&sz=w1200"> alt="Umrah package" loading="lazy"></div>
+        <div class="photo-frame"><img src="assets/images/home/home-office.svg"  alt="Umrah package" loading="lazy"></div>
         <div class="body"><h3>Umrah Packages</h3>
           <ul class="specs"><li><b>Duration:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li><li><b>Hotel:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li><li><b>Transport:</b> Private or shared</li><li><b>Visa:</b> Assistance included</li></ul>
           <div class="price">Price: <span class="placeholder-value" contenteditable="false">Add your details</span></div>
@@ -156,7 +201,7 @@ About Hashmat
         </div>
       </article>
       <article class="card reveal" style="--delay:.08s">
-        <div class="photo-frame"><img src="https://drive.google.com/thumbnail?id=1YyizBRXyNhyXaLEgLanCwgczyZuS-Lze&sz=w1200"> alt="Hajj package" loading="lazy"></div>
+        <div class="photo-frame"><img src="assets/images/home/home-office.svg" alt="Hajj package" loading="lazy"></div>
         <div class="body"><h3>Hajj Packages</h3>
           <ul class="specs"><li><b>Duration:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li><li><b>Hotel:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li><li><b>Transport:</b> Private or shared</li><li><b>Visa:</b> Assistance included</li></ul>
           <div class="price">Price: <span class="placeholder-value" contenteditable="false">Add your details</span></div>
@@ -164,7 +209,7 @@ About Hashmat
         </div>
       </article>
       <article class="card reveal" style="--delay:.16s">
-        <div class="photo-frame"><img src="https://drive.google.com/thumbnail?id=1lJz_vpRU3IX-9Th6qWVFnOCHO88iNTHx&sz=w1200"> alt="Family Umrah package" loading="lazy"></div>
+        <div class="photo-frame"><img src="assets/images/home/home-office.svg"  alt="Family Umrah package" loading="lazy"></div>
         <div class="body"><h3>Family Umrah</h3>
           <ul class="specs"><li><b>Duration:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li><li><b>Hotel:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li><li><b>Transport:</b> Private or shared</li><li><b>Visa:</b> Assistance included</li></ul>
           <div class="price">Price: <span class="placeholder-value" contenteditable="false">Add your details</span></div>
@@ -176,7 +221,7 @@ About Hashmat
 </section>
 
 <!-- ============ SPIRITUAL DESTINATIONS ============ -->
-<!--<section class="black">
+<section class="black">
   <div class="w">
     <h2 class="split-text">Places At The Heart Of The Journey</h2>
     <div class="grid grid-3" style="margin-top:36px">
@@ -185,10 +230,10 @@ About Hashmat
       <div class="reveal" style="--delay:.2s"><div class="photo-frame" style="min-height:300px"><img src="assets/images/home/home-office.svg"  alt="Mina, Arafat and Muzdalifah" loading="lazy"></div><h3 style="margin-top:14px">Mina, Arafat &amp; Muzdalifah</h3></div>
     </div>
   </div>
-</section>-->
+</section>
 
 <!-- ============ PROCESS ============ -->
-<!--<section>
+<section>
   <div class="w grid grid-2" style="gap:60px">
     <div><h2 class="split-text">How We Plan Your Journey</h2><p class="lead">A clear path from first call to safe return.</p></div>
     <div>
@@ -198,32 +243,32 @@ About Hashmat
 <div class="step reveal"><h3>Travel with support</h3><p style="opacity:.85;max-width:52ch">Assistance stays available until you are home.</p></div>
     </div>
   </div>
-</section>-->
+</section>
 
 <!-- ============ SERVICES ============ -->
-<!--<section class="soft">
+<section class="soft">
   <div class="w">
     <h2 class="split-text">Complete Travel Services</h2>
     <div class="grid grid-3" style="margin-top:36px">
       <div class="card reveal" style="padding:28px;--delay:0.0s"><h3>Flight Arrangements</h3></div><div class="card reveal" style="padding:28px;--delay:0.08s"><h3>Hotel Arrangements</h3></div><div class="card reveal" style="padding:28px;--delay:0.16s"><h3>Airport Transfers</h3></div><div class="card reveal" style="padding:28px;--delay:0.24s"><h3>Transportation</h3></div><div class="card reveal" style="padding:28px;--delay:0.32s"><h3>Customized Packages</h3></div><div class="card reveal" style="padding:28px;--delay:0.4s"><h3>Visa Assistance</h3></div>
     </div>
   </div>
-</section>-->
+</section>
 
 <!-- ============ FEATURED INTERNATIONAL TOURS ============ -->
 <section>
   <div class="w">
     <div class="section-head"><h2 class="split-text">International Tours</h2><a class="btn blue" href="international-tours.html">All Destinations</a></div>
     <div class="grid grid-3">
-      <article class="card reveal"><div class="photo-frame"><img src="https://drive.google.com/thumbnail?id=1HHA4l71ffpEi7q_syf_0j9X_Uw4-ajO_&sz=w1200"> alt="Baku, Azerbaijan" loading="lazy"></div><div class="body"><h3>Baku, Azerbaijan</h3><p style="color:var(--mut);font-size:14px">A trip built around your dates, hotel category and pace.</p><ul class="specs"><li><b>Duration:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li></ul><a class="btn blue" href="international-tours.html" style="margin-top:auto">Request Itinerary</a></div></article>
-      <article class="card reveal" style="--delay:.08s"><div class="photo-frame"><img src="https://drive.google.com/thumbnail?id=181_8AV53fbnaBiTUmgW9JTWqNKn-GXHq&sz=w1200">  alt="Istanbul, Turkey" loading="lazy"></div><div class="body"><h3>Istanbul, Turkey</h3><p style="color:var(--mut);font-size:14px">A trip built around your dates, hotel category and pace.</p><ul class="specs"><li><b>Duration:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li></ul><a class="btn blue" href="international-tours.html" style="margin-top:auto">Request Itinerary</a></div></article>
-      <article class="card reveal" style="--delay:.16s"><div class="photo-frame"><img src="https://drive.google.com/thumbnail?id=1MeZVjXMuMvA3LQe40uXhPahhGtiw-A1a&sz=w1200"> alt="Dubai, UAE" loading="lazy"></div><div class="body"><h3>Dubai, UAE</h3><p style="color:var(--mut);font-size:14px">A trip built around your dates, hotel category and pace.</p><ul class="specs"><li><b>Duration:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li></ul><a class="btn blue" href="international-tours.html" style="margin-top:auto">Request Itinerary</a></div></article>
+      <article class="card reveal"><div class="photo-frame"><img src="assets/images/home/home-office.svg" alt="Baku, Azerbaijan" loading="lazy"></div><div class="body"><h3>Baku, Azerbaijan</h3><p style="color:var(--mut);font-size:14px">A trip built around your dates, hotel category and pace.</p><ul class="specs"><li><b>Duration:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li></ul><a class="btn blue" href="international-tours.html" style="margin-top:auto">Request Itinerary</a></div></article>
+      <article class="card reveal" style="--delay:.08s"><div class="photo-frame"><img src="assets/images/home/home-office.svg"  alt="Istanbul, Turkey" loading="lazy"></div><div class="body"><h3>Istanbul, Turkey</h3><p style="color:var(--mut);font-size:14px">A trip built around your dates, hotel category and pace.</p><ul class="specs"><li><b>Duration:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li></ul><a class="btn blue" href="international-tours.html" style="margin-top:auto">Request Itinerary</a></div></article>
+      <article class="card reveal" style="--delay:.16s"><div class="photo-frame"><img src="assets/images/home/home-office.svg"  alt="Dubai, UAE" loading="lazy"></div><div class="body"><h3>Dubai, UAE</h3><p style="color:var(--mut);font-size:14px">A trip built around your dates, hotel category and pace.</p><ul class="specs"><li><b>Duration:</b> <span class="placeholder-value" contenteditable="false">Add your details</span></li></ul><a class="btn blue" href="international-tours.html" style="margin-top:auto">Request Itinerary</a></div></article>
     </div>
   </div>
 </section>
 
-<!-- ============ re or ============ -->
-<!--<section class="soft">
+<!-- ============ FEATURED DOMESTIC TOURS ============ -->
+<section class="soft">
   <div class="w">
     <div class="section-head"><h2 class="split-text">Discover Pakistan</h2><a class="btn blue" href="domestic-tours.html">All Tours</a></div>
     <div class="grid bento">
@@ -232,7 +277,7 @@ About Hashmat
       <a href="domestic-tours.html" class="c3"><div class="photo-frame" style="min-height:100%"><img src="assets/images/home/home-office.svg"  alt="Swat" loading="lazy"><div class="cap"><h3>Swat</h3><span>Request a plan</span></div></div></a>
     </div>
   </div>
-</section>-->
+</section>
 
 <!-- ============ STATISTICS ============ -->
 <section class="dark">
