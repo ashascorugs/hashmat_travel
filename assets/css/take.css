@@ -1,0 +1,666 @@
+/* =========================================================
+   HASHMAT TRAVEL & TOURS
+   RESPONSIVE CSS
+   ========================================================= */
+
+/* ---------- GLOBAL ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   HEADER / NAVIGATION
+   ========================================================= */
+
+header {
+    width: 100%;
+}
+
+header .w {
+    width: min(1200px, 92%);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo img {
+    max-width: 180px;
+    height: auto;
+    display: block;
+}
+
+nav {
+    flex: 1;
+}
+
+nav ul {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+nav a {
+    white-space: nowrap;
+}
+
+/* Burger hidden on desktop */
+
+.burger {
+    display: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.burger i {
+    display: block;
+    width: 28px;
+    height: 2px;
+    margin: 6px 0;
+    background: currentColor;
+    transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero .w {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+.hero h1 {
+    max-width: 850px;
+}
+
+.hero .lead {
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
+
+.about-section {
+    width: 100%;
+    padding: 100px 20px;
+}
+
+.about-container {
+    width: min(1200px, 92%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 70px;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+}
+
+.main-image {
+    width: 78%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.main-image img,
+.small-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.small-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 42%;
+    height: 250px;
+
+    overflow: hidden;
+    border-radius: 20px;
+
+    border: 8px solid #fff;
+}
+
+.about-content {
+    min-width: 0;
+}
+
+.about-content h2 {
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    max-width: 550px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   WHY TRAVELERS SECTION
+   ========================================================= */
+
+.hero1 {
+    width: 100%;
+    padding: 100px 20px;
+}
+
+.hero1 .title {
+    width: min(1200px, 92%);
+    margin: 0 auto 60px;
+}
+
+.hero1 .title h2 {
+    margin: 0;
+}
+
+.stats {
+    width: min(1200px, 92%);
+    margin: 0 auto 60px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stats > div {
+    min-width: 0;
+    padding: 25px;
+}
+
+.stats b {
+    display: block;
+    font-size: clamp(36px, 5vw, 65px);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.stats p {
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cards {
+    width: min(1200px, 92%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    min-width: 0;
+    padding: 30px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DARK SECTION
+   ========================================================= */
+
+.dark .w {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+.dark .grid-2 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.step {
+    padding: 20px 0;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer .w {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+    gap: 40px;
+}
+
+.footer-grid > div {
+    min-width: 0;
+}
+
+.footer-grid a,
+.footer-grid p {
+    overflow-wrap: anywhere;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.newsletter-form input[type="email"] {
+    min-width: 0;
+    width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    header .w {
+        width: 94%;
+    }
+
+    nav ul {
+        gap: 15px !important;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .logo img {
+        max-width: 155px;
+    }
+
+    .about-container {
+        gap: 45px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    header .w {
+        position: relative;
+        min-height: 75px;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        z-index: 1001;
+    }
+
+    nav {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: #111;
+        z-index: 1000;
+
+        border-radius: 0 0 15px 15px;
+
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 10px;
+    }
+
+    nav .btn {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+
+    /* About */
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .image-wrapper {
+        min-height: 500px;
+    }
+
+
+    /* Stats */
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* Cards */
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* Dark section */
+
+    .dark .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    .w {
+        width: 92% !important;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    header .w {
+        min-height: 68px;
+    }
+
+    .logo img {
+        max-width: 140px;
+    }
+
+    nav {
+        padding: 15px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 11vw, 54px);
+        line-height: 1.05;
+    }
+
+    .hero .lead {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .plane {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-section {
+        padding: 70px 0;
+    }
+
+    .about-container {
+        width: 92%;
+        gap: 45px;
+    }
+
+    .image-wrapper {
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    .main-image {
+        width: 90%;
+        height: 330px;
+    }
+
+    .small-image {
+        width: 45%;
+        height: 180px;
+        border-width: 5px;
+    }
+
+    .about-content h2 {
+        font-size: clamp(32px, 9vw, 48px);
+    }
+
+    .about-content p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+
+    /* ---------- WHY SECTION ---------- */
+
+    .hero1 {
+        padding: 70px 0;
+    }
+
+    .hero1 .title {
+        width: 92%;
+        margin-bottom: 40px;
+    }
+
+    .hero1 .title h2 {
+        font-size: clamp(38px, 11vw, 58px);
+        line-height: 1;
+    }
+
+
+    /* ---------- STATS ---------- */
+
+    .stats {
+        width: 92%;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 45px;
+    }
+
+    .stats > div {
+        padding: 20px 12px;
+    }
+
+    .stats b {
+        font-size: 38px;
+    }
+
+    .stats p {
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+
+    /* ---------- CARDS ---------- */
+
+    .cards {
+        width: 92%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+
+    /* ---------- DARK ---------- */
+
+    .dark {
+        padding: 70px 0;
+    }
+
+    .dark .w.grid {
+        width: 92%;
+    }
+
+    .dark h2 {
+        font-size: clamp(34px, 9vw, 50px);
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .black {
+        padding: 70px 0;
+    }
+
+    .black h2 {
+        font-size: clamp(36px, 10vw, 52px) !important;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding-top: 60px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-grid .logo img {
+        max-width: 160px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .copyright {
+        text-align: center;
+        line-height: 1.6;
+        padding: 20px 0;
+    }
+
+
+    /* ---------- FLOATING BUTTON ---------- */
+
+    .whatsapp-fab {
+        font-size: 13px;
+        padding: 10px 14px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    #top {
+        right: 15px;
+        bottom: 70px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stats > div {
+        text-align: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .main-image {
+        width: 88%;
+        height: 280px;
+    }
+
+    .small-image {
+        width: 48%;
+        height: 150px;
+    }
+}
