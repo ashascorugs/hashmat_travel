@@ -238,8 +238,8 @@ About Hashmat
 <section class="dark">
   <div class="w grid grid-4">
     <div class="stat reveal"><b data-count="6">0</b>Package Types</div>
-<div class="stat reveal"><b data-count="6">0</b>International Destinations</div>
-<div class="stat reveal"><b data-count="6">0</b>Pakistan Destinations</div>
+<div class="stat reveal"><b data-count="6">0+</b>International Destinations</div>
+<div class="stat reveal"><b data-count="6">0+</b>Pakistan Destinations</div>
 <div class="stat reveal"><b data-count="4">0</b>Visa Categories</div>
   </div>
 </section>
@@ -284,10 +284,10 @@ About Hashmat
   </div>
   
   <div class="stats glass">
-    <div><b class="counter" data-target="60">0</b><p>From budget adventures to<br>private luxury escapes</p></div>
-    <div><b class="counter" data-target="15">0</b><p>Perfecting meaningful travel<br>experiences since 2009</p></div>
+    <div><b class="counter" data-target="500">0</b><p>From budget adventures to<br>private luxury escapes</p></div>
+    <div><b class="counter" data-target="250">0</b><p>Perfecting meaningful travel<br>experiences since 2009</p></div>
     <div><b class="counter" data-target="98">0</b><p>Most travelers come back to<br>plan their next trip</p></div>
-    <div><b class="counter" data-target="12">0</b><p>Journeys crafted for travelers<br>who return</p></div>
+    <div><b class="counter" data-target="0">0</b><p>Journeys crafted for travelers<br>who return</p></div>
   </div>
   
   <div class="cards">
@@ -367,23 +367,55 @@ About Hashmat
 </html>
 
 <script>
-  const counters=document.querySelectorAll(".counter");
+  const counters = document.querySelectorAll(".counter");
   
-  counters.forEach(counter=>{
-  let target=Number(counter.dataset.target);
-  let count=0;
-  let speed=target/100;
+  const observer = new IntersectionObserver((entries, observer) => {
   
-  function update(){
-   count+=speed;
-   if(count<target){
-     counter.innerHTML=Math.floor(count)+"+";
-     requestAnimationFrame(update);
-   }else{
-     counter.innerHTML=target+(target===98?"%":"+");
-   }
-  }
-  update();
+    entries.forEach(entry => {
+  
+      if (entry.isIntersecting) {
+  
+        const counter = entry.target;
+        const target = Number(counter.dataset.target);
+  
+        let count = 0;
+        const duration = 1500; // animation time
+        const startTime = performance.now();
+  
+        function update(currentTime) {
+  
+          const progress = Math.min(
+            (currentTime - startTime) / duration,
+            1
+          );
+  
+          count = Math.floor(progress * target);
+  
+          counter.innerHTML =
+            count + (target === 98 ? "%" : "+");
+  
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            counter.innerHTML =
+              target + (target === 98 ? "%" : "+");
+          }
+        }
+  
+        requestAnimationFrame(update);
+  
+        // Sirf pehli dafa chale
+        observer.unobserve(counter);
+      }
+  
+    });
+  
+  }, {
+    threshold: 0.5
+  });
+  
+  
+  counters.forEach(counter => {
+    observer.observe(counter);
   });
   </script>
-  
